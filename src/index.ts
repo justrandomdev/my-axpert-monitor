@@ -47,8 +47,6 @@ const generalStatus = async () => {
 
     const answer = await axpert.get.generalStatus();
     await writeData(answer);
-    console.log(answer);
-
   } catch (err: any) {
     console.log(err.message);
   }
@@ -64,7 +62,7 @@ const writeData = async (data: any) => {
           measurement: "general_status",
           tags: { source: "node" },
           fields: { 
-            gridVoltage: data.gridvoltage,
+            gridVoltage: data.gridVoltage,
             gridFrequency: data.gridFrequency,
             outputVoltage: data.outputVoltage,
             outputFrequency: data.outputFrequency,
